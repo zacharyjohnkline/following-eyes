@@ -24,7 +24,25 @@ document.onmousemove = (event) => {
   pupilLeft.style.top = `${y / 2}%`;
   pupilRight.style.top = `${y / 2}%`;
 };
-
+function animateCursor() {
+  if (document.body.style.cursor !== "pointer") {
+    setTimeout(() => {
+      if (
+        document.body.style.cursor === `url("./FLY_CURSOR_LARGE.gif"), default`
+      ) {
+        document.body.style.cursor = `url('./FLY_CURSOR_LARGE2.gif'), default`;
+        animateCursor();
+      } else if (
+        document.body.style.cursor === `url("./FLY_CURSOR_LARGE2.gif"), default`
+      ) {
+        document.body.style.cursor = `url('./FLY_CURSOR_LARGE.gif'),default`;
+        animateCursor();
+      } else {
+        clearTimeout();
+      }
+    }, 20);
+  }
+}
 function closedMouth(mouth) {
   if (cursorState === true) {
     document.body.style.cursor = "pointer";
@@ -46,7 +64,6 @@ function closedMouth(mouth) {
     rightBrow.style.transform = "rotate(-10deg)";
     cursorState = false;
     cursorImage.style.visibility = "hidden";
-    document.removeEventListener("mousemove", cursorImage);
     if (score % 10 === 0) {
       overlayWords.innerText = `CONGRATS!  You fed him ${score} flies!`;
       begFly.style.display = "none";
@@ -69,6 +86,7 @@ function closedMouth(mouth) {
 }
 function cursorChange() {
   document.body.style.cursor = `url("./FLY_CURSOR_LARGE.gif"), default`;
+  animateCursor();
   cursorState = true;
   mouth.style.transition = "2s";
   mouth.style.height = "150px";
