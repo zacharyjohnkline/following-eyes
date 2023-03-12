@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  /* max-width: 900px; */
+}
+body {
+  cursor: pointer;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(#006db0, rgb(75, 203, 208));
+  font-family: "Roboto Condensed", sans-serif;
+  overflow: hidden;
+}
+#back {
+  text-decoration: none;
+  position: absolute;
+  z-index: 13;
+  top: 10px;
+  left: 30px;
+  color: white;
+  font-size: 3em;
+  transform: rotate(180deg);
+}
+.Cursor-Image {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  display: none;
+  visibility: hidden;
+}
+.Directions-Overlay {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  z-index: 10;
+  width: 100vw;
+  height: 50vh;
+  background-color: #00000080;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.Functionality {
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  bottom: 0;
+  width: 180px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  color: white;
+  margin-left: 20px;
+}
+
+#Instructions {
+  margin-left: 15px;
+}
+.Button {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background-color: #ffffff30;
+  border: 2px solid white;
+  align-items: center;
+  padding: 6px;
+  border-radius: 10px;
+}
+.Button:hover {
+  color: black;
+  background-color: white;
+}
+.Score {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  background-color: #ffffff30;
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 10px;
+}
+#Score-Words {
+  font-size: 2em;
+  color: white;
+}
+#Score-Info {
+  margin-left: 15px;
+}
+.Title-Container {
+  position: absolute;
+  width: 1000px;
+  height: 50%;
+  bottom: -140px;
+  right: -500px;
+  background-image: linear-gradient(90deg, #00417d, #0572c0);
+  z-index: 3;
+  transform: rotate(-45deg);
+  display: flex;
+  justify-content: center;
+}
+.Title-Words {
+  font-size: 3em;
+  color: white;
+  text-shadow: -1px -1px 1px #073596;
+}
+.Head {
+  max-width: 900px;
+  width: 130vw;
+  height: 100vh;
+  border-radius: 50%;
+  background-color: #ffc400;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  box-shadow: 0px 100px 20px #0000ff30;
+}
+.Head::after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  box-shadow: inset 0px 0px 30px #00000090;
+}
+.Brow-Container {
+  width: 100%;
+  height: 120px;
+  /* background-color: red; */
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+}
+.Brow-Placement {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.Left-Brow {
+  width: 120px;
+  height: 50%;
+  border-top: 10px solid black;
+  /* border-radius: 50%; */
+  margin-top: -8%;
+  transform: rotate(-20deg);
+}
+.Right-Brow {
+  width: 120px;
+  height: 50%;
+  border-top: 10px solid black;
+  /* border-radius: 50%; */
+  margin-top: -8%;
+  transform: rotate(20deg);
+}
+.Eye-Container {
+  width: 100%;
+  height: 100px;
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.Eyes {
+  transition: 0.1s;
+  height: 100px;
+}
+.Eye-Left {
+  position: relative;
+  height: 120px;
+  width: 140px;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 50%;
+  border: 3px solid rgb(0, 86, 86);
+  box-shadow: inset 0px 0px 10px #00000090;
+  /* box-shadow: 0px -3px 0px #00000090; */
+}
+
+.Eye-Right {
+  position: relative;
+  height: 120px;
+  width: 140px;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 50%;
+  border: 3px solid rgb(0, 86, 86);
+  box-shadow: inset 0px 0px 10px #00000090;
+  /* box-shadow: 0px -3px 0px #00000090; */
+}
+.Pupil-Left {
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  width: 60px;
+  height: 60px;
+  background-color: black;
+  border-radius: 50%;
+  border: 5px solid green;
+}
+
+.Pupil-Right {
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  width: 60px;
+  height: 60px;
+  background-color: black;
+  border-radius: 50%;
+  border: 5px solid green;
+}
+
+.Pupil-Top-Light {
+  z-index: 2;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 35px;
+  background-color: white;
+}
+
+.Pupil-Bot-Light {
+  z-index: 2;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  background-color: white;
+}
+
+.Eye-Gradient {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-image: linear-gradient(90deg, black, rgb(94, 94, 94));
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.Mouth-Switcher {
+  width: 25%;
+  height: 170px;
+  z-index: 4;
+  overflow: hidden;
+  position: relative;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: black; */
+}
+.Mouth-Container {
+  width: 90%;
+  height: 10px;
+  background-color: black;
+  overflow: hidden;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  /* outline: 10px solid rgb(7, 109, 109); */
+}
+.Teeth {
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  margin-top: -40px;
+}
+.Tongue {
+  width: 100%;
+  height: 100px;
+  background-color: red;
+  margin-top: 80px;
+  border-radius: 50%;
+}
