@@ -16,7 +16,7 @@ body {
   height: 100vh;
   background-image: linear-gradient(#006db0, rgb(75, 203, 208));
   font-family: "Roboto Condensed", sans-serif;
-  overflow: hidden
+  overflow: hidden;
 }
 .overall-page {
   overflow: hidden;
